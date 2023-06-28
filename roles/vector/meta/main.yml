@@ -1,0 +1,13 @@
+galaxy_info:
+  author: Aleksandr Krasichkov
+  description: This role for install Vector
+  company: OBUITC
+  license: MIT
+  min_ansible_version: 2.10
+  platforms:
+  - name: EL
+    versions:
+      - 7
+      - 8
+
+
