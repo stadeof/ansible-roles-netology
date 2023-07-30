@@ -6,10 +6,12 @@ node("linux"){
         prod_run=false
         if (prod_run == false){
             sh 'git pull https://github.com/stadeof/ansible-roles-netology.git'
+            sh 'ansible-galaxy install -r requirements.yml -p roles'
             sh 'ansible-playbook --check --diff site.yml -i inventory/prod.yml'
         }
         else{
             sh 'git pull https://github.com/stadeof/ansible-roles-netology.git'
+            sh 'ansible-galaxy install -r requirements.yml -p roles'
             sh 'ansible-playbook site.yml -i inventory/prod.yml'
         }
         
