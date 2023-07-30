@@ -1,0 +1,15 @@
+node("linux"){
+    stage("Git checkout"){
+        url: 'https://github.com/stadeof/ansible-roles-netology.git'
+    }
+    stage("Run playbook"){
+        prod_run=false
+        if (prod_run == false){
+            sh 'ansible-playbook --check --diff site.yml -i inventory/prod.yml'
+        }
+        else{
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        
+    }
+}
