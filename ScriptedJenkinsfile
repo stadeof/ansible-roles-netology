@@ -5,11 +5,11 @@ node("linux"){
     stage("Run playbook"){
         prod_run=false
         if (prod_run == false){
-            sh 'git pull'
+            sh 'git pull https://github.com/stadeof/ansible-roles-netology.git'
             sh 'ansible-playbook --check --diff site.yml -i inventory/prod.yml'
         }
         else{
-            sh 'git pull'
+            sh 'git pull https://github.com/stadeof/ansible-roles-netology.git'
             sh 'ansible-playbook site.yml -i inventory/prod.yml'
         }
         
